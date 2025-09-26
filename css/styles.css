@@ -67,7 +67,7 @@ a:hover { color: var(--accent); }
 =================================*/
 .btn { display: inline-block; padding: 0.5rem 1rem; border-radius: var(--radius); background: var(--blue); border: 1px solid rgba(255,255,255,0.1); color: var(--accent); cursor:pointer; transition: all 0.2s; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px var(--shadow); }
-.btn-outline { border:1px solid rgba(255,255,255,0.2); }
+.btn-outline { background-color: #1dbacf; border:1px solid rgba(255,255,255,0.2); }
 
 /* ===============================
    Grid / Cards
@@ -99,7 +99,7 @@ a:hover { color: var(--accent); }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0; /* Kartlar arası boşluk */
+  gap: 1; /* Kartlar arası boşluk */
   justify-content: center; /* Ortalar */
 }
 
@@ -438,11 +438,24 @@ a:hover { color: var(--accent); }
   border-radius: var(--radius);
   border: 1px solid;
   background: transparent;
-  color: var(--text);
 }
 
 input, textarea, select {
-  border: 1px solid #00000; /* istediğin renk */
+  border: 1px solid #00000;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #00a9bf;
+  box-shadow: 0 0 0 3px rgba(0, 169, 191, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text);
+  opacity: 1;
 }
 
 /* Gönder Butonu */
@@ -488,7 +501,7 @@ input, textarea, select {
 #preloader img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* görsel tüm ekranı kaplar */
+  object-fit: cover;
 }
 
 #preloader.hidden {
