@@ -75,7 +75,7 @@ a:hover { color: var(--accent); }
 .grid { display: grid; gap: var(--gap); justify-items: center; }
 .cols-3 { grid-template-columns: repeat(3, 1fr); }
 .cols-2 { grid-template-columns: repeat(2, 1fr); }
-.card { background: var(--surface); padding:0.8rem; border-radius: var(--radius); box-shadow: 0 6px 20px var(--shadow); transition: transform 0.2s; max-width: 320px; text-align: center; }
+.card { background: var(--surface); padding:0.8rem; border-radius: var(--radius); box-shadow: 0 5px 15px var(--shadow); transition: transform 0.2s; max-width: 320px; text-align: center; }
 .card:hover { transform: translateY(-3px); }
 .card img { border-radius: var(--radius); margin-bottom: 0.5rem; max-height: 200px; object-fit: cover; }
 
@@ -551,3 +551,4 @@ textarea::placeholder {
   .slide img { height: 200px; }
   .contact-card, .contact-info { flex:1 1 100%; text-align:center; padding:0.75rem; }
 }
+
