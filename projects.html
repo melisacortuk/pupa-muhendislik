@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projeler — Pupa Mühendislik</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Pupa Mühendislik</a>
+      <button class="nav-toggle" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="projects.html" class="active">Projeler</a></li>
+          <li><a href="references.html">Referanslar</a></li>
+          <li><a href="contact.html" class="btn-contact">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section projects-section">
+      <div class="container">
+        <h1>Projelerimiz</h1>
+        <p class="lead">Seçme projelerimiz ve kısa açıklamaları.</p>
+
+        <div class="grid cols-3 projects-list">
+          <div class="project-detail card reveal">
+            <img src="img/resim10.jpg" alt="Proje 1">
+            <p>Galataport İstanbul - İleri seviye mekanik tesisat ve otomasyon</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim11.jpg" alt="Proje 2">
+            <p>Doğuş Center Etiler - Isı geri kazanımlı klima santralleri kurulumu</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim12.jpg" alt="Proje 3">
+            <p>Sütaş Süt A.Ş. - Endüstriyel çözümler ve soğutma projeleri</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim13.jpg" alt="Proje 4">
+            <p>Proje 4 - Açıklama</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim14.jpg" alt="Proje 5">
+            <p>Proje 5 - Açıklama</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim15.jpg" alt="Proje 6">
+            <p>Proje 6 - Açıklama</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim16.jpg" alt="Proje 7">
+            <p>Proje 7 - Açıklama</p>
+          </div>
+          <div class="project-detail card reveal">
+            <img src="img/resim17.jpg" alt="Proje 8">
+            <p>Proje 8 - Açıklama</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year-projects"></span> Pupa Mühendislik</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year-projects").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
