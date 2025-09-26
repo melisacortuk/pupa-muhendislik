@@ -1,0 +1,540 @@
+/* ===============================
+   Global Variables & Reset
+=================================*/
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #00000;
+  --muted: #b0b0b0;
+  --accent: #ffffff;
+  --shadow: #00a9bf;
+  --radius: 12px;
+  --gap: 1.5rem;
+  --container: 1100px;
+  --blue: #00a9bf;
+  font-family: "Poppins", Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body { height:100%; background-color: var(--bg); color: var(--text); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: var(--muted); transition: all 0.2s; }
+a:hover { color: var(--accent); }
+
+/* ===============================
+   Container
+=================================*/
+.container { max-width: var(--container); margin: 0 auto; padding: 1rem; }
+
+/* ===============================
+   Header
+=================================*/
+.site-header {
+  position: sticky; top:0; z-index: 100;
+  background-color: var(--surface);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+.brand { font-weight: 700; font-size: 1.25rem; color: var(--blue); }
+.main-nav ul { display: flex; list-style: none; gap: 1rem; }
+.main-nav a { color: var(--blue); }
+.main-nav a.active { color: #0099bf; font-weight: 600; }
+.nav-toggle { display: none; background:none; border:none; cursor:pointer; flex-direction: column; justify-content: space-around; height: 24px; width: 30px; }
+.nav-toggle span { display: block; height: 2px; width: 100%; background: var(--blue); border-radius: 2px; }
+
+/* ===============================
+   Hero Slider
+=================================*/
+.hero-slider { position: relative; width: 100%; overflow: hidden; margin-bottom: 2rem; border-radius: var(--radius); }
+.slides { display: flex; transition: transform 0.7s ease-in-out; }
+.slide { min-width: 100%; transition: opacity 0.7s ease-in-out; }
+.slide img { width: 100%; height: 450px; object-fit: fill; border-radius: var(--radius); display: block; }
+.dots { position: absolute; bottom: 20px; left:50%; transform: translateX(-50%); display:flex; gap:8px; z-index:10; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--muted); cursor:pointer; transition: all 0.3s; }
+.dot.active { background: var(--accent); }
+
+/* ===============================
+   Hero Text
+=================================*/
+.hero-text { text-align: center; margin-bottom: 4rem; }
+.hero-text h1 { font-size: 2rem; margin-bottom: 1rem; }
+.hero-text .lead { color: var(--muted); margin-bottom: 1rem; }
+.hero-cta .btn { margin: 0 0.5rem; }
+
+/* ===============================
+   Buttons
+=================================*/
+.btn { display: inline-block; padding: 0.5rem 1rem; border-radius: var(--radius); background: var(--blue); border: 1px solid rgba(255,255,255,0.1); color: var(--accent); cursor:pointer; transition: all 0.2s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px var(--shadow); }
+.btn-outline { border:1px solid rgba(255,255,255,0.2); }
+
+/* ===============================
+   Grid / Cards
+=================================*/
+.grid { display: grid; gap: var(--gap); justify-items: center; }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card { background: var(--surface); padding:0.8rem; border-radius: var(--radius); box-shadow: 0 6px 20px var(--shadow); transition: transform 0.2s; max-width: 320px; text-align: center; }
+.card:hover { transform: translateY(-3px); }
+.card img { border-radius: var(--radius); margin-bottom: 0.5rem; max-height: 200px; object-fit: cover; }
+
+/* ===============================
+   Projects
+=================================*/
+.project-detail {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem; /* Kart içi boşluk arttı */
+  box-shadow: 0 6px 15px var(--shadow);
+  text-align: center;
+  max-width: 265px;  /* Kart genişliğini burada artırabilirsin */
+  height: 275px;      /* Kart yüksekliği */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0; /* Kartlar arası boşluk */
+  justify-content: center; /* Ortalar */
+}
+
+/* Sadece projeler sayfasındaki project-detail kartları */
+.projects-section .projects-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Kartları yatayda ortalar */
+  gap: 2rem; /* Kartlar arası boşluk */
+}
+
+.projects-section .project-detail {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px var(--shadow);
+  text-align: center;
+  max-width: 250px; /* Kart genişliği */
+  min-width: 250px; /* Küçük ekranlarda kartlar daralmasın */
+  height: 250px;    /* Kart yüksekliği */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-section .project-detail img {
+  max-height: 160px;
+  width: auto;
+  margin-bottom: 0.3rem;
+  object-fit: contain;
+}
+
+/* ===============================
+   References
+=================================*/
+/* ===============================
+   References
+=================================*/
+.references-section {
+  padding: 3rem 0;
+}
+
+.references-container {
+  max-width: 1200px; /* Container genişliği */
+  margin: 0 auto;    /* Ortala */
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center; /* İçerikleri yatayda ortala */
+  align-items: flex-start;
+}
+
+.references-image {
+  flex: 1 1 400px; /* Görsel kısmı */
+  text-align: center;
+}
+
+.references-image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.references-info {
+  flex: 1 1 400px; /* Firma/iletişim kısmı */
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 15px var(--shadow);
+}
+
+.references-info table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+
+.references-info th,
+.references-info td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.references-info th {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .references-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .references-image,
+  .references-info {
+    flex: 1 1 100%;
+  }
+}
+
+.refs-layout {
+  display: flex;
+  gap: 3rem; /* Görsel ve tablo arası boşluk */
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.refs-image {
+  flex: 1 1 370px; /* Maksimum genişlik 400px, responsive */
+}
+
+.refs-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.refs-table {
+  flex: 2 1 370px; /* Tablo kısmı genişler */
+  overflow-x: auto; /* Taşmaları önlemek için */
+}
+
+.refs-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+
+.refs-table th, .refs-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--blue);
+  text-align: left;
+}
+
+.refs-table th {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.references-section {
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .refs-layout {
+    flex-direction: column;
+  }
+  .refs-image, .refs-table {
+    flex: 1 1 100%;
+  }
+}
+
+/* ===============================
+   Contact
+=================================*/
+.contact-section {
+  padding: 3rem 1rem;
+  overflow-x: hidden;
+}
+
+.contact-page-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px; /* Sayfa içi sınırlama */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Sol taraf (Form) */
+.contact-left {
+  background: #95B9C7;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 15px var(--shadow);
+  flex: 1 1 100%; /* Artık tamamen sığacak */
+  max-width: 700px; /* Formun genişliği sınırlı */
+  box-sizing: border-box;
+}
+
+/* Sağ taraf (Bilgiler & Harita) */
+.contact-right {
+  flex: 1 1 100%;
+  max-width: 350px; /* Kart genişliği sınırlandı */
+  box-sizing: border-box;
+}
+
+.contact-right .card {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.form-actions .btn {
+  margin-top: .5rem;
+  color: var(--text);
+}
+
+
+/* Responsive */
+@media (min-width: 769px) {
+  .contact-page-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contact-left {
+    flex: 2 1 60%;
+  }
+
+  .contact-right {
+    flex: 1 1 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .contact-left .form-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-left {
+    padding: 1.2rem;
+  }
+  .contact-right .card {
+    padding: 1rem;
+  }
+  .map-placeholder iframe {
+    min-height: 180px;
+  }
+}
+
+
+/* ===============================
+   Services
+=================================*/
+.services-list {
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+/* ===============================
+   About
+=================================*/
+
+.about-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Mobile için üst üste gelsin */
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-right {
+    justify-content: center;
+  }
+}
+
+
+/* ===============================
+   Quick Contact
+=================================*/
+/* Quick Contact */
+.contact-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+/* Form Kartı */
+.contact-card {
+  flex: 1 1 600px; /* Genişlik arttı */
+  background: #95B9C7;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.contact-card .btn {
+  color: var(--text);
+}
+
+/* Form input/textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid;
+  background: transparent;
+  color: var(--text);
+}
+
+input, textarea, select {
+  border: 1px solid #00000; /* istediğin renk */
+}
+
+/* Gönder Butonu */
+.contact-form button {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.contact-form button:hover {
+  background: rgba(255,255,255,0.85);
+}
+
+/* İletişim Bilgileri */
+.contact-info {
+  flex: 1 1 300px;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* arka plan rengi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 1.5s ease, visibility 1.5s ease; /* daha yavaş fade */
+}
+
+#preloader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* görsel tüm ekranı kaplar */
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-info {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+/* ===============================
+   Section Titles
+=================================*/
+.section-title { font-size:1.75rem; margin-bottom: 2.5rem; margin-top:2.5rem; text-align:center; }
+
+/* ===============================
+   Footer
+=================================*/
+.site-footer { padding: 1rem 0; border-top:1px solid rgba(255,255,255,0.1); text-align:left; }
+
+/* ===============================
+   Responsive
+=================================*/
+@media (max-width: 1024px) {
+  .cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .main-nav { display: none; flex-direction: column; gap: 1rem; position: absolute; top: 64px; left: 0; width: 100%; background: var(--surface); padding: 1rem; }
+  .main-nav.open { display: flex; }
+  .main-nav ul { flex-direction: column; gap: 1rem; text-align:center; }
+}
+
+@media (max-width: 480px) {
+  .cols-3, .cols-2 { grid-template-columns: 1fr; }
+  .slide img { height: 200px; }
+  .contact-card, .contact-info { flex:1 1 100%; text-align:center; padding:0.75rem; }
+}

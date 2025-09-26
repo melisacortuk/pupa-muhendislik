@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hizmetler — Pupa Mühendislik</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Pupa Mühendislik</a>
+      <button class="nav-toggle" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="services.html" class="active">Hizmetler</a></li>
+          <li><a href="projects.html">Projeler</a></li>
+          <li><a href="references.html">Referanslar</a></li>
+          <li><a href="contact.html" class="btn-contact">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section services-section">
+      <div class="container">
+        <h1>Hizmetlerimiz</h1>
+        <p class="lead">Projelendirme ve uygulama süreçlerinde aşağıdaki hizmetleri sunuyoruz.</p>
+
+        <div class="grid cols-3 services-list">
+          <article class="service card reveal">
+            <img src="img/isitma.jpg" alt="Isıtma-Soğutma Sistemleri" />
+            <h3>Isıtma Sistemleri</h3>
+            <p>Merkezi sistemler, yerden ısıtma ve radyatör projeleri.</p>
+          </article>
+
+          <article class="service card reveal">
+            <img src="img/havalandirma.jpg" alt="Havalandırma" />
+            <h3>Havalandırma</h3>
+            <p>Taze hava, egzoz ve duman tahliye sistemleri.</p>
+          </article>
+
+          <article class="service card reveal">
+            <img src="img/tesisat.jpg" alt="Sıhhi Tesisat" />
+            <h3>Sıhhi ve Atık Su Tesisatı</h3>
+            <p>Modern temiz su ve atık su çözümleri.</p>
+          </article>
+
+          <article class="service card reveal">
+            <img src="img/yangin.jpg" alt="Yangın" />
+            <h3>Yangından Korunma Sistemleri</h3>
+            <p>Sprinkler, hidrant, yangın dolapları ve duman yönetimi.</p>
+          </article>
+
+          <article class="service card reveal">
+            <img src="img/dogalgaz.jpg" alt="Doğalgaz" />
+            <h3>Doğalgaz Dağıtım Sistemleri</h3>
+            <p>Güvenli ve verimli borulama ve dağıtım sistemleri.</p>
+          </article>
+
+          <article class="service card reveal">
+            <img src="img/test.jpg" alt="Test ve Dokümantasyon" />
+            <h3>Test - Ayar - Dokümantasyon</h3>
+            <p>Projelerin tesliminde kalite ve güvence için test ve dokümantasyon.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Pupa Mühendislik</strong>
+        <p>Suadiye Mah. Yusufçavuş Sok. No: 13/1 — Kadıköy / İstanbul</p>
+      </div>
+      <div>
+        <p>© <span id="year-services"></span> Pupa Mühendislik</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year-services").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
